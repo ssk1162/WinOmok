@@ -13,10 +13,10 @@ namespace WinOmok
     {
         ActEasyIF plc1 = new ActEasyIF();
 
-        int margin = 40;
-        int ´«Size = 30;
-        int µ¹Size = 28;
-        int È­Á¡size = 10;
+        private readonly int margin = 40;
+        private readonly int ´«Size = 30;
+        private readonly int µ¹Size = 28;
+        private readonly int È­Á¡size = 10;
 
         private Graphics g;
         private Pen pen;
