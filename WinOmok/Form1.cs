@@ -32,34 +32,38 @@ namespace WinOmok
 
         STONE[,] 바둑판 = new STONE[19, 19];
 
-        // 서버 연결
+        // 서버 연결 체크
         bool btnFlag = false;
-
+        // 바둑돌 체크
         bool flag = false;
+        // 돌 이미지 체크
         bool imgFlag = true;
-
+        // 수순 돌에 숫자 표시 체크
         bool sequenceFlag = true;
+        // 복기 모드
         bool reviceFlag = false;
+        // 싱글/네트워크
         bool gameMode = false;
-
+        // 게임 시작버튼 체크
         bool gameFlag = false;
-
+        // 돌 턴 체크
         bool checkFlag = true;
-
+        // 네트워크 플레이어 턴 체크
         bool PlayerFlag = true;
-
+        // PLC 실행 체크
         bool singleFlag = false;
-
+        // 돌 숫자 카운터
         int stoneCnt = 1;
-
+        // 복기에 사용되는 순서
         int sequence = 0;
-
+        // 돌 숫자 폰트
         Font font = new Font("맑은 고딕", 6);
-
+        // 좌표, 돌 색깔, 수순 체크
         List<Revive> lstRevive = new List<Revive>();
+        // 복기할때 저장할 이름
         private string dirName;
 
-        DateTime dateTime;
+        //DateTime dateTime;
 
         public Form1()
         {
@@ -70,6 +74,7 @@ namespace WinOmok
             bBrush = new SolidBrush(Color.Black);
             wBrush = new SolidBrush(Color.White);
 
+            // 창 크기
             this.ClientSize = new Size(2 * margin + 18 * 눈Size + 465, 2 * margin + 18 * 눈Size + menuStrip1.Height + 100);
 
             txtChat.Enabled = false;
@@ -131,6 +136,8 @@ namespace WinOmok
 
 
         }
+
+        // 서버 연결 해제
         private void btnClose_Click(object sender, EventArgs e)
         {
             btnConn.BackColor = Color.White;
@@ -142,7 +149,8 @@ namespace WinOmok
             panel1.Refresh();
             DrawBoard();
         }
-
+    
+        // 메시지 불러오기
         private async Task GameClient(TcpClient client)
         {
             ns = client.GetStream();
@@ -226,6 +234,7 @@ namespace WinOmok
 
         }
 
+        // PLC 연결
         private void btnCh_Click(object sender, EventArgs e)
         {
             if (singleFlag == false)
@@ -324,6 +333,7 @@ namespace WinOmok
             }
         }
 
+        // 상대 돌 위치 불러와서 그리기
         private async Task GameSERClient(TcpClient client)
         {
             _ns = client.GetStream();
