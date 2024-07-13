@@ -4,6 +4,7 @@ using System.Text;
 using System.Xml.Linq;
 using ChatLlb.Models;
 using ACTMULTILib;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 
 namespace WinOmok
 {
@@ -145,11 +146,12 @@ namespace WinOmok
             btnSerGame.Text = "게임 준비";
             btnSerGame.Enabled = false;
             txtNick.Enabled = true;
-            
+            btnFlag = false;
+
             panel1.Refresh();
             DrawBoard();
         }
-    
+
         // 메시지 불러오기
         private async Task GameClient(TcpClient client)
         {
@@ -494,7 +496,6 @@ namespace WinOmok
                 await _ns.WriteAsync(data, 0, data.Length);
 
                 CheckOmok(x, y);
-                //dateTime = DateTime.Now;
 
             }
         }
@@ -557,7 +558,7 @@ namespace WinOmok
 
             }
             else if (res == DialogResult.No)
-            {   
+            {
                 this.Close();
             }
 
@@ -614,7 +615,7 @@ namespace WinOmok
             int num = plc1.GetDevice("Y40", out int Y40);
             if (num == 0)
             {
-                plc1.SetDevice("M100", 1);
+                plc1.SetDevice("M2", 1);
             }
 
             panel1.Refresh();
@@ -690,7 +691,7 @@ namespace WinOmok
             int num = plc1.GetDevice("Y40", out int Y40);
             if (num == 0)
             {
-                plc1.SetDevice("M100", 1);
+                plc1.SetDevice("M2", 1);
             }
 
         }
@@ -793,7 +794,7 @@ namespace WinOmok
         {
             NewGame();
             싱글ToolStripMenuItem.Checked = true;
-            네트워크ToolStripMenuItem.Checked = false;
+            멀티ToolStripMenuItem.Checked = false;
             gameMode = false;
             txtChat.Enabled = false;
             txtNick.Enabled = false;
@@ -803,10 +804,10 @@ namespace WinOmok
             panel1.MouseDown += panel1_MouseDown;
         }
 
-        private void 네트워크ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 멀티ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewGame();
-            네트워크ToolStripMenuItem.Checked = true;
+            멀티ToolStripMenuItem.Checked = true;
             싱글ToolStripMenuItem.Checked = false;
             gameMode = true;
             txtChat.Enabled = true;
@@ -815,6 +816,7 @@ namespace WinOmok
             btnSend.Enabled = true;
             btnSerGame.Enabled = false;
             btnClose.Enabled = true;
+            btnCh.Enabled = false;
             panel1.MouseDown -= panel1_MouseDown;
 
         }
@@ -867,5 +869,6 @@ namespace WinOmok
         {
             plc1.SetDevice("M5", 0);
         }
+
     }
 }

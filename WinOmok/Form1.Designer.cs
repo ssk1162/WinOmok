@@ -41,7 +41,7 @@
             그리기ToolStripMenuItem = new ToolStripMenuItem();
             모드ToolStripMenuItem = new ToolStripMenuItem();
             싱글ToolStripMenuItem = new ToolStripMenuItem();
-            네트워크ToolStripMenuItem = new ToolStripMenuItem();
+            멀티ToolStripMenuItem = new ToolStripMenuItem();
             수순ToolStripMenuItem = new ToolStripMenuItem();
             수순표시ToolStripMenuItem = new ToolStripMenuItem();
             수순표시안함ToolStripMenuItem = new ToolStripMenuItem();
@@ -143,7 +143,7 @@
             // 
             // 모드ToolStripMenuItem
             // 
-            모드ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 싱글ToolStripMenuItem, 네트워크ToolStripMenuItem });
+            모드ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 싱글ToolStripMenuItem, 멀티ToolStripMenuItem });
             모드ToolStripMenuItem.Name = "모드ToolStripMenuItem";
             모드ToolStripMenuItem.Size = new Size(64, 29);
             모드ToolStripMenuItem.Text = "모드";
@@ -153,16 +153,16 @@
             싱글ToolStripMenuItem.Checked = true;
             싱글ToolStripMenuItem.CheckState = CheckState.Checked;
             싱글ToolStripMenuItem.Name = "싱글ToolStripMenuItem";
-            싱글ToolStripMenuItem.Size = new Size(186, 34);
+            싱글ToolStripMenuItem.Size = new Size(270, 34);
             싱글ToolStripMenuItem.Text = "싱글";
             싱글ToolStripMenuItem.Click += 싱글ToolStripMenuItem_Click;
             // 
-            // 네트워크ToolStripMenuItem
+            // 멀티ToolStripMenuItem
             // 
-            네트워크ToolStripMenuItem.Name = "네트워크ToolStripMenuItem";
-            네트워크ToolStripMenuItem.Size = new Size(186, 34);
-            네트워크ToolStripMenuItem.Text = "네트워크";
-            네트워크ToolStripMenuItem.Click += 네트워크ToolStripMenuItem_Click;
+            멀티ToolStripMenuItem.Name = "멀티ToolStripMenuItem";
+            멀티ToolStripMenuItem.Size = new Size(270, 34);
+            멀티ToolStripMenuItem.Text = "멀티";
+            멀티ToolStripMenuItem.Click += 멀티ToolStripMenuItem_Click;
             // 
             // 수순ToolStripMenuItem
             // 
@@ -418,7 +418,7 @@
         private ToolStripMenuItem 저장ToolStripMenuItem;
         private ToolStripMenuItem 모드ToolStripMenuItem;
         private ToolStripMenuItem 싱글ToolStripMenuItem;
-        private ToolStripMenuItem 네트워크ToolStripMenuItem;
+        private ToolStripMenuItem 멀티ToolStripMenuItem;
         private Button btnSerGame;
         private System.Windows.Forms.Timer timer1;
         private Button btnClose;
