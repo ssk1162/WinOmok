@@ -417,11 +417,9 @@ namespace WinOmok
                 plc1.SetDevice("M30", 1);
                 plc1.SetDevice("M31", 0);
                 plc1.SetDevice("M300", 0);
-                plc1.SetDevice("M400", 1);
 
                 Thread.Sleep(500);
                 plc1.SetDevice("M3", 0);
-                plc1.SetDevice("M400", 0);
             }
             else
             {
@@ -445,11 +443,9 @@ namespace WinOmok
                 plc1.SetDevice("M31", 1);
                 plc1.SetDevice("M30", 0);
                 plc1.SetDevice("M300", 1);
-                plc1.SetDevice("M400", 1);
 
                 Thread.Sleep(500);
                 plc1.SetDevice("M3", 0);
-                plc1.SetDevice("M400", 0);
             }
 
             CheckOmok(x, y);
