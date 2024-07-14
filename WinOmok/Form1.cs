@@ -848,6 +848,7 @@ namespace WinOmok
 
         }
 
+        // 원점 복귀
         private void button1_Click(object sender, EventArgs e)
         {
             plc1.SetDevice("M2", 1);
@@ -858,6 +859,7 @@ namespace WinOmok
             plc1.SetDevice("M2", 0);
         }
 
+        // 에러리셋
         private void button1_Click_1(object sender, EventArgs e)
         {
             plc1.SetDevice("M5", 1);
