@@ -110,7 +110,9 @@ namespace WinOmok
 
                     _ = GameClient(client);
 
-                    if (gameMode == true)
+                    btnFlag = true;
+
+                    if (gameMode == true && btnFlag == true)
                     {
                         _listener = new TcpListener(IPAddress.Parse("172.31.6.25"), 8080);
                         _listener.Start();
@@ -120,7 +122,6 @@ namespace WinOmok
                         _ = GameSERClient(_client);
 
                     }
-                    btnFlag = true;
 
                 }
                 else if (btnFlag == true)
