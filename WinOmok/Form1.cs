@@ -8,7 +8,7 @@ namespace WinOmok
 {
     public enum STONE { none, black, white };
 
-    public partial class Form1 : Form
+    public partial class Omok : Form
     {
         ActEasyIF plc1 = new ActEasyIF();
 
@@ -21,10 +21,12 @@ namespace WinOmok
         private Pen pen;
         private Brush wBrush, bBrush;
 
+        // 채팅용
         private TcpListener listener;
         private TcpClient client;
         private NetworkStream ns;
 
+        // 게임용
         private TcpListener _listener;
         private TcpClient _client;
         private NetworkStream _ns;
@@ -64,7 +66,7 @@ namespace WinOmok
 
         //DateTime dateTime;
 
-        public Form1()
+        public Omok()
         {
             InitializeComponent();
 
@@ -129,11 +131,7 @@ namespace WinOmok
                     MessageBox.Show("이미 연결되어있음");
                 }
             }
-            catch
-            {
-
-            }
-
+            catch { }
 
         }
 
@@ -407,8 +405,10 @@ namespace WinOmok
                     Bitmap bmp = new Bitmap("../../../image/black.png");
                     g.DrawImage(bmp, r);
                 }
+                
                 DrawStoneSequence(stoneCnt, Brushes.White, r);
-                lstRevive.Add(new Revive(x, y, STONE.black, stoneCnt++));
+                lstRevive.Add(new Revive(x, y, STONE.black, stoneCnt));
+                stoneCnt++;
                 flag = true;
                 바둑판[x, y] = STONE.black;
 
@@ -434,7 +434,8 @@ namespace WinOmok
                     g.DrawImage(bmp, r);
                 }
                 DrawStoneSequence(stoneCnt, Brushes.Black, r);
-                lstRevive.Add(new Revive(x, y, STONE.white, stoneCnt++));
+                lstRevive.Add(new Revive(x, y, STONE.white, stoneCnt));
+                stoneCnt++;
                 flag = false;
                 바둑판[x, y] = STONE.white;
 

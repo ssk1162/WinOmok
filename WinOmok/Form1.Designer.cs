@@ -1,6 +1,6 @@
 ﻿namespace WinOmok
 {
-    partial class Form1
+    partial class Omok
     {
         /// <summary>
         ///  Required designer variable.
@@ -153,14 +153,14 @@
             싱글ToolStripMenuItem.Checked = true;
             싱글ToolStripMenuItem.CheckState = CheckState.Checked;
             싱글ToolStripMenuItem.Name = "싱글ToolStripMenuItem";
-            싱글ToolStripMenuItem.Size = new Size(270, 34);
+            싱글ToolStripMenuItem.Size = new Size(150, 34);
             싱글ToolStripMenuItem.Text = "싱글";
             싱글ToolStripMenuItem.Click += 싱글ToolStripMenuItem_Click;
             // 
             // 멀티ToolStripMenuItem
             // 
             멀티ToolStripMenuItem.Name = "멀티ToolStripMenuItem";
-            멀티ToolStripMenuItem.Size = new Size(270, 34);
+            멀티ToolStripMenuItem.Size = new Size(150, 34);
             멀티ToolStripMenuItem.Text = "멀티";
             멀티ToolStripMenuItem.Click += 멀티ToolStripMenuItem_Click;
             // 
@@ -371,7 +371,7 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
-            // Form1
+            // Omok
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -379,8 +379,8 @@
             Controls.Add(tableLayoutPanel1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
-            Text = "Form1";
+            Name = "Omok";
+            Text = "Omok";
             FormClosing += Form1_FormClosing;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
