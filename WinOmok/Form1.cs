@@ -43,7 +43,7 @@ namespace WinOmok
         bool sequenceFlag = true;
         // 복기 모드
         bool reviceFlag = false;
-        // 싱글/네트워크
+        // 싱글/멀티 모드
         bool gameMode = false;
         // 게임 시작버튼 체크
         bool gameFlag = false;
