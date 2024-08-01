@@ -138,13 +138,28 @@ namespace WinOmok
         // 서버 연결 해제
         private void btnClose_Click(object sender, EventArgs e)
         {
-            btnConn.BackColor = Color.White;
-            btnConn.Text = "연결";
-            btnSerGame.Text = "게임 준비";
-            btnSerGame.Enabled = false;
-            txtNick.Enabled = true;
-            btnFlag = false;
+            if (btnFlag == true)
+            {
+                btnConn.BackColor = Color.White;
+                btnConn.Text = "연결";
+                btnSerGame.Text = "게임 준비";
+                btnSerGame.Enabled = false;
+                txtNick.Enabled = true;
+                btnFlag = false;
 
+
+                listener.Stop();
+                client.Dispose();
+                client.Close();
+                ns.Close();
+
+                _listener.Stop();
+                _client.Dispose();
+                _client.Close();
+                _ns.Close();
+               
+            } 
+                        
             panel1.Refresh();
             DrawBoard();
         }
@@ -827,8 +842,6 @@ namespace WinOmok
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try
-            {
                 listener.Stop();
                 _listener.Stop();
                 client.Close();
@@ -838,11 +851,6 @@ namespace WinOmok
                 listener.Dispose();
                 _listener.Dispose();
                 this.Close();
-            }
-            catch
-            {
-
-            }
 
         }
 
